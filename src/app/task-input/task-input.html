@@ -3,21 +3,18 @@
 
   <form>
     <label>Task Title</label>
-    <input type="text" placeholder="Enter task title" [(ngModel)]="title">
+    <input type="text" name="title" [(ngModel)]="title">
 
-    <label>Description</label>
-    <textarea placeholder="Enter task description" [(ngModel)]="description"></textarea>
+    <textarea name="description" [(ngModel)]="description"></textarea>
 
-    <label>Priority</label>
-    <select  [(ngModel)]="priority">
+    <select name="priority" [(ngModel)]="priority">
       <option>Low</option>
       <option>Medium</option>
       <option>High</option>
     </select>
 
-    <label>Date</label>
-    <input type="date" [(ngModel)]="date">
+    <input type="date" name="date" [(ngModel)]="date">
 
-     <button type="button" (click)="addTask()">Add Task</button>
+    <button type="button" (click)="addTask()">Add Task</button>
   </form>
 </section>

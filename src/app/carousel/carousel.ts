@@ -8,6 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './carousel.css',
 })
 export class Carousel {
+
+  intervalID: any;
+
   images: string[] = [
     'images/1.png',
     'images/2.png',
@@ -40,8 +43,12 @@ export class Carousel {
   }
 
   slideShow(): void {
-    setInterval(() => {
+    this.intervalID = setInterval(() => {
       this.next();
     }, 1000);
+  }
+
+  stopSlideShow(): void {
+    clearInterval(this.intervalID);
   }
 }

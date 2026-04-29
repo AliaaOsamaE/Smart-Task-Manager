@@ -1,0 +1,25 @@
+div {
+  text-align: center;
+}
+
+img {
+  width: 400px;
+  height: 250px;
+  margin: 10px 0;
+}
+
+i {
+  font-size: 24px;
+  margin: 0 10px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+button {
+  margin: 5px;
+  padding: 5px 10px;
+}
+
+.bi-circle-fill {
+  font-size: 12px;
+}
