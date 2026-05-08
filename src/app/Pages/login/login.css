@@ -1,32 +1,35 @@
-.task-input-container {
-  min-height: calc(100vh - 200px);
+.login-container {
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   padding: 2rem;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 
-.task-input-card {
+.login-card {
   background: white;
   border-radius: 10px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
   padding: 3rem;
   width: 100%;
-  max-width: 600px;
+  max-width: 450px;
 }
 
-.page-title {
-  font-size: 2rem;
-  color: #333;
+.login-header {
+  text-align: center;
   margin-bottom: 2rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
 }
 
-.page-title i {
-  color: #667eea;
+.login-header h2 {
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.login-header p {
+  color: #666;
+  font-size: 1rem;
 }
 
 .alert {
@@ -36,12 +39,6 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-}
-
-.alert-success {
-  background-color: #d4edda;
-  color: #155724;
-  border: 1px solid #c3e6cb;
 }
 
 .alert-danger {
@@ -79,7 +76,6 @@
   border-radius: 5px;
   font-size: 1rem;
   transition: border-color 0.3s ease;
-  font-family: inherit;
 }
 
 .form-control:focus {
@@ -89,15 +85,6 @@
 
 .form-control.ng-invalid.ng-touched {
   border-color: #dc3545;
-}
-
-textarea.form-control {
-  resize: vertical;
-  min-height: 100px;
-}
-
-select.form-control {
-  cursor: pointer;
 }
 
 .error-message {
@@ -120,7 +107,6 @@ select.form-control {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  font-weight: 500;
 }
 
 .btn-primary {
@@ -137,24 +123,58 @@ select.form-control {
 .btn-primary:disabled {
   background-color: #ccc;
   cursor: not-allowed;
-  transform: none;
 }
 
 .btn-block {
   width: 100%;
+}
+
+.signup-link {
+  text-align: center;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.signup-link p {
+  color: #666;
+  margin: 0;
+}
+
+.signup-link a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+.back-link {
+  text-align: center;
   margin-top: 1rem;
 }
 
-@media (max-width: 768px) {
-  .task-input-container {
-    padding: 1rem;
-  }
+.back-link a {
+  color: #666;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
 
-  .task-input-card {
+.back-link a:hover {
+  color: #667eea;
+}
+
+@media (max-width: 576px) {
+  .login-card {
     padding: 2rem;
   }
-
-  .page-title {
+  
+  .login-header h2 {
     font-size: 1.5rem;
   }
 }

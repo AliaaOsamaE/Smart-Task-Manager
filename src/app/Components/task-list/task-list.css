@@ -1,0 +1,80 @@
+.task-list-container {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.page-title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.page-title i {
+  color: #667eea;
+}
+
+.task-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #e0e0e0;
+  flex-wrap: wrap;
+}
+
+.tab-link {
+  padding: 1rem 2rem;
+  text-decoration: none;
+  color: #666;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
+  top: 2px;
+}
+
+.tab-link:hover {
+  color: #667eea;
+  background-color: #f8f9fa;
+}
+
+.tab-link.active {
+  color: #667eea;
+  border-bottom-color: #667eea;
+  background-color: #f8f9fa;
+}
+
+.tab-link i {
+  font-size: 1.2rem;
+}
+
+.tab-content {
+  min-height: 400px;
+}
+
+@media (max-width: 768px) {
+  .task-list-container {
+    padding: 1rem;
+  }
+
+  .page-title {
+    font-size: 1.8rem;
+  }
+
+  .task-tabs {
+    gap: 0.5rem;
+  }
+
+  .tab-link {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Made with Bob */

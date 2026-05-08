@@ -1,1 +1,39 @@
-<app-task-card></app-task-card>
+<div class="task-list-container">
+  <h2 class="page-title">
+    <i class="bi bi-list-check"></i>
+    My Tasks
+  </h2>
+
+  <!-- Task Filter Tabs -->
+  <nav class="task-tabs">
+    <a
+      routerLink="all"
+      routerLinkActive="active"
+      class="tab-link"
+    >
+      <i class="bi bi-list-task"></i>
+      All Tasks
+    </a>
+    <a
+      routerLink="done"
+      routerLinkActive="active"
+      class="tab-link"
+    >
+      <i class="bi bi-check-circle-fill"></i>
+      Done
+    </a>
+    <a
+      routerLink="not-done"
+      routerLinkActive="active"
+      class="tab-link"
+    >
+      <i class="bi bi-circle"></i>
+      Not Done
+    </a>
+  </nav>
+
+  <!-- Router Outlet - Child routes will be displayed here -->
+  <div class="tab-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

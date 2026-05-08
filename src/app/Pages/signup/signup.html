@@ -1,0 +1,133 @@
+<div class="signup-container">
+  <div class="signup-card">
+    <div class="signup-header">
+      <h2>Create Your Account</h2>
+      <p>Join us and start managing your tasks efficiently</p>
+    </div>
+
+    <!-- Error Alert -->
+    <div class="alert alert-danger" *ngIf="showError">
+      <i class="bi bi-exclamation-triangle-fill"></i>
+      {{ errorMessage }}
+    </div>
+
+    <!-- Signup Form -->
+    <form (ngSubmit)="onSignup()" #signupForm="ngForm">
+      <!-- Username Field -->
+      <div class="form-group">
+        <label for="username">
+          <i class="bi bi-person-fill"></i>
+          Username
+        </label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          class="form-control"
+          [(ngModel)]="username"
+          placeholder="Enter your username"
+          required
+          minlength="3"
+          #usernameField="ngModel"
+        />
+        <div class="error-message" *ngIf="usernameField.invalid && usernameField.touched">
+          <small *ngIf="usernameField.errors?.['required']">Username is required</small>
+          <small *ngIf="usernameField.errors?.['minlength']">Username must be at least 3 characters</small>
+        </div>
+      </div>
+
+      <!-- Email Field -->
+      <div class="form-group">
+        <label for="email">
+          <i class="bi bi-envelope-fill"></i>
+          Email Address
+        </label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          class="form-control"
+          [(ngModel)]="email"
+          placeholder="Enter your email"
+          required
+          email
+          #emailField="ngModel"
+        />
+        <div class="error-message" *ngIf="emailField.invalid && emailField.touched">
+          <small *ngIf="emailField.errors?.['required']">Email is required</small>
+          <small *ngIf="emailField.errors?.['email']">Please enter a valid email</small>
+        </div>
+      </div>
+
+      <!-- Password Field -->
+      <div class="form-group">
+        <label for="password">
+          <i class="bi bi-lock-fill"></i>
+          Password
+        </label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          class="form-control"
+          [(ngModel)]="password"
+          placeholder="Enter your password"
+          required
+          minlength="6"
+          #passwordField="ngModel"
+        />
+        <div class="error-message" *ngIf="passwordField.invalid && passwordField.touched">
+          <small *ngIf="passwordField.errors?.['required']">Password is required</small>
+          <small *ngIf="passwordField.errors?.['minlength']">Password must be at least 6 characters</small>
+        </div>
+      </div>
+
+      <!-- Confirm Password Field -->
+      <div class="form-group">
+        <label for="confirmPassword">
+          <i class="bi bi-lock-fill"></i>
+          Confirm Password
+        </label>
+        <input
+          type="password"
+          id="confirmPassword"
+          name="confirmPassword"
+          class="form-control"
+          [(ngModel)]="confirmPassword"
+          placeholder="Confirm your password"
+          required
+          #confirmPasswordField="ngModel"
+        />
+        <div class="error-message" *ngIf="confirmPasswordField.invalid && confirmPasswordField.touched">
+          <small *ngIf="confirmPasswordField.errors?.['required']">Please confirm your password</small>
+        </div>
+        <div class="error-message" *ngIf="password !== confirmPassword && confirmPasswordField.touched && confirmPassword">
+          <small>Passwords do not match</small>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <button 
+        type="submit" 
+        class="btn btn-primary btn-block"
+        [disabled]="signupForm.invalid || password !== confirmPassword"
+      >
+        <i class="bi bi-person-plus-fill"></i>
+        Sign Up
+      </button>
+    </form>
+
+    <!-- Login Link -->
+    <div class="login-link">
+      <p>Already have an account? <a routerLink="/login">Login</a></p>
+    </div>
+
+    <!-- Back to Home -->
+    <div class="back-link">
+      <a routerLink="/layout/home">
+        <i class="bi bi-arrow-left"></i>
+        Back to Home
+      </a>
+    </div>
+  </div>
+</div>

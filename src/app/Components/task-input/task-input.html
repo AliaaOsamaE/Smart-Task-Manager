@@ -1,20 +1,135 @@
-<section>
-  <h2>Add New Task</h2>
+<div class="task-input-container">
+  <div class="task-input-card">
+    <h2 class="page-title">
+      <i class="bi bi-plus-circle-fill"></i>
+      Add New Task
+    </h2>
 
-  <form>
-    <label>Task Title</label>
-    <input type="text" name="title" [(ngModel)]="title">
+    <!-- Success Message -->
+    <div class="alert alert-success" *ngIf="showSuccess">
+      <i class="bi bi-check-circle-fill"></i>
+      Task added successfully! Redirecting...
+    </div>
 
-    <textarea name="description" [(ngModel)]="description"></textarea>
+    <!-- Error Message -->
+    <div class="alert alert-danger" *ngIf="showError">
+      <i class="bi bi-exclamation-triangle-fill"></i>
+      {{ errorMessage }}
+    </div>
 
-    <select name="priority" [(ngModel)]="priority">
-      <option>Low</option>
-      <option>Medium</option>
-      <option>High</option>
-    </select>
+    <!-- Task Form -->
+    <form (ngSubmit)="addTask()" #taskForm="ngForm">
+      <!-- Title Field -->
+      <div class="form-group">
+        <label for="title">
+          <i class="bi bi-card-text"></i>
+          Task Title *
+        </label>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          class="form-control"
+          [(ngModel)]="title"
+          placeholder="Enter task title"
+          required
+          #titleField="ngModel"
+        />
+        <div class="error-message" *ngIf="titleField.invalid && titleField.touched">
+          <small>Title is required</small>
+        </div>
+      </div>
 
-    <input type="date" name="date" [(ngModel)]="date">
+      <!-- Description Field -->
+      <div class="form-group">
+        <label for="desc">
+          <i class="bi bi-file-text"></i>
+          Description *
+        </label>
+        <textarea
+          id="desc"
+          name="desc"
+          class="form-control"
+          [(ngModel)]="desc"
+          placeholder="Enter task description"
+          rows="4"
+          required
+          #descField="ngModel"
+        ></textarea>
+        <div class="error-message" *ngIf="descField.invalid && descField.touched">
+          <small>Description is required</small>
+        </div>
+      </div>
 
-    <button type="button" (click)="addTask()">Add Task</button>
-  </form>
-</section>
+      <!-- Priority Field -->
+      <div class="form-group">
+        <label for="priority">
+          <i class="bi bi-flag-fill"></i>
+          Priority *
+        </label>
+        <select
+          id="priority"
+          name="priority"
+          class="form-control"
+          [(ngModel)]="priority"
+          required
+        >
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
+      </div>
+
+      <!-- Category Field -->
+      <div class="form-group">
+        <label for="category">
+          <i class="bi bi-tag-fill"></i>
+          Category *
+        </label>
+        <input
+          type="text"
+          id="category"
+          name="category"
+          class="form-control"
+          [(ngModel)]="category"
+          placeholder="e.g., Work, Personal, Shopping"
+          required
+          #categoryField="ngModel"
+        />
+        <div class="error-message" *ngIf="categoryField.invalid && categoryField.touched">
+          <small>Category is required</small>
+        </div>
+      </div>
+
+      <!-- Date Field -->
+      <div class="form-group">
+        <label for="date">
+          <i class="bi bi-calendar-fill"></i>
+          Due Date *
+        </label>
+        <input
+          type="date"
+          id="date"
+          name="date"
+          class="form-control"
+          [(ngModel)]="date"
+          required
+          #dateField="ngModel"
+        />
+        <div class="error-message" *ngIf="dateField.invalid && dateField.touched">
+          <small>Due date is required</small>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <button
+        type="submit"
+        class="btn btn-primary btn-block"
+        [disabled]="taskForm.invalid"
+      >
+        <i class="bi bi-plus-lg"></i>
+        Add Task
+      </button>
+    </form>
+  </div>
+</div>
