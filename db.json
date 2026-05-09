@@ -2,10 +2,10 @@
   "tasks": [],
   "users": [
     {
-      "id": "-zoam1cSbmk",
-      "username": "Aliaa.Osama@ibm.com",
-      "email": "Aliaa.Osama@ibm.com",
-      "password": "AliaaOsama122#"
+      "id": "lZJaVlID1J4",
+      "username": "aliaa",
+      "email": "aliaa@gmail.com",
+      "password": "Aliaa122#"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
