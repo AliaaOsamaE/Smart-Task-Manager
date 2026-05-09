@@ -9,7 +9,4 @@ import { RouterLink } from '@angular/router';
   styleUrl: './home.css'
 })
 export class Home {
-  // Home page component - Landing page for the application
 }
-
-// Made with Bob

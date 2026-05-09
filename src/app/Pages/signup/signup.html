@@ -5,15 +5,12 @@
       <p>Join us and start managing your tasks efficiently</p>
     </div>
 
-    <!-- Error Alert -->
     <div class="alert alert-danger" *ngIf="showError">
       <i class="bi bi-exclamation-triangle-fill"></i>
       {{ errorMessage }}
     </div>
 
-    <!-- Signup Form -->
     <form (ngSubmit)="onSignup()" #signupForm="ngForm">
-      <!-- Username Field -->
       <div class="form-group">
         <label for="username">
           <i class="bi bi-person-fill"></i>
@@ -36,7 +33,6 @@
         </div>
       </div>
 
-      <!-- Email Field -->
       <div class="form-group">
         <label for="email">
           <i class="bi bi-envelope-fill"></i>
@@ -59,7 +55,6 @@
         </div>
       </div>
 
-      <!-- Password Field -->
       <div class="form-group">
         <label for="password">
           <i class="bi bi-lock-fill"></i>
@@ -82,7 +77,6 @@
         </div>
       </div>
 
-      <!-- Confirm Password Field -->
       <div class="form-group">
         <label for="confirmPassword">
           <i class="bi bi-lock-fill"></i>
@@ -106,7 +100,6 @@
         </div>
       </div>
 
-      <!-- Submit Button -->
       <button 
         type="submit" 
         class="btn btn-primary btn-block"
@@ -117,12 +110,10 @@
       </button>
     </form>
 
-    <!-- Login Link -->
     <div class="login-link">
       <p>Already have an account? <a routerLink="/login">Login</a></p>
     </div>
 
-    <!-- Back to Home -->
     <div class="back-link">
       <a routerLink="/layout/home">
         <i class="bi bi-arrow-left"></i>

@@ -10,7 +10,6 @@ import { Task } from '../types';
 export class TaskService {
   private http = inject(HttpClient);
   private apiUrl = 'http://localhost:3000/tasks';
-
   getAllTasks() {
     return this.http.get<Task[]>(this.apiUrl);
   }

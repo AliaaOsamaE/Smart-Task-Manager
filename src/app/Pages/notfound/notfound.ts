@@ -9,7 +9,4 @@ import { RouterLink } from '@angular/router';
   styleUrl: './notfound.css'
 })
 export class NotFound {
-  // 404 Not Found page component
 }
-
-// Made with Bob

@@ -10,7 +10,6 @@ import { User } from '../types';
 export class UserService {
   private http = inject(HttpClient);
   private apiUrl = 'http://localhost:3000/users';
-
   async addUser(user: User) {
     await firstValueFrom(
       this.http.post(this.apiUrl, user)

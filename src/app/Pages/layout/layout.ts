@@ -11,8 +11,4 @@ import { Footer } from '../../Components/footer/footer';
   styleUrl: './layout.css'
 })
 export class Layout {
-  // Layout component - Wrapper for pages with header and footer
-  // Uses RouterOutlet to display child routes
 }
-
-// Made with Bob

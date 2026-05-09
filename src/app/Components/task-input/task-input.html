@@ -5,21 +5,17 @@
       Add New Task
     </h2>
 
-    <!-- Success Message -->
     <div class="alert alert-success" *ngIf="showSuccess">
       <i class="bi bi-check-circle-fill"></i>
       Task added successfully! Redirecting...
     </div>
 
-    <!-- Error Message -->
     <div class="alert alert-danger" *ngIf="showError">
       <i class="bi bi-exclamation-triangle-fill"></i>
       {{ errorMessage }}
     </div>
 
-    <!-- Task Form -->
     <form (ngSubmit)="addTask()" #taskForm="ngForm">
-      <!-- Title Field -->
       <div class="form-group">
         <label for="title">
           <i class="bi bi-card-text"></i>
@@ -40,7 +36,6 @@
         </div>
       </div>
 
-      <!-- Description Field -->
       <div class="form-group">
         <label for="desc">
           <i class="bi bi-file-text"></i>
@@ -61,7 +56,6 @@
         </div>
       </div>
 
-      <!-- Priority Field -->
       <div class="form-group">
         <label for="priority">
           <i class="bi bi-flag-fill"></i>
@@ -80,7 +74,6 @@
         </select>
       </div>
 
-      <!-- Category Field -->
       <div class="form-group">
         <label for="category">
           <i class="bi bi-tag-fill"></i>
@@ -101,7 +94,6 @@
         </div>
       </div>
 
-      <!-- Date Field -->
       <div class="form-group">
         <label for="date">
           <i class="bi bi-calendar-fill"></i>
@@ -121,7 +113,6 @@
         </div>
       </div>
 
-      <!-- Submit Button -->
       <button
         type="submit"
         class="btn btn-primary btn-block"

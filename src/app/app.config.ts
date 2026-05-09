@@ -8,7 +8,7 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZoneChangeDetection(),
-    provideHttpClient(),  // CRITICAL: Enables HTTP requests to json-server
+    provideHttpClient(),
     provideRouter(routes)
   ]
 };
