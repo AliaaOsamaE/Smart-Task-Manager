@@ -1,5 +1,4 @@
 <div class="task-card" [class.task-done]="isDone()">
-  <!-- Task Header -->
   <div class="task-header">
     <h3 class="task-title">{{ task.title }}</h3>
     <span class="priority-badge" [ngClass]="getPriorityClass()">
@@ -7,10 +6,8 @@
     </span>
   </div>
 
-  <!-- Task Description -->
   <p class="task-description">{{ task.desc }}</p>
 
-  <!-- Task Meta Info -->
   <div class="task-meta">
     <div class="meta-item">
       <i class="bi bi-tag-fill"></i>
@@ -22,7 +19,6 @@
     </div>
   </div>
 
-  <!-- Task Status -->
   <div class="task-status">
     <span class="status-badge" [class.status-done]="isDone()">
       <i [class.bi-check-circle-fill]="isDone()" [class.bi-circle]="!isDone()"></i>
@@ -30,7 +26,6 @@
     </span>
   </div>
 
-  <!-- Task Actions -->
   <div class="task-actions">
     <button
       class="btn btn-toggle"

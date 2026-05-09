@@ -6,7 +6,6 @@
       <h1>Smart Task Manager</h1>
     </div>
 
-    <!-- Navigation -->
     <nav class="nav">
       <ul class="nav-list">
         <li class="nav-item">
@@ -16,7 +15,6 @@
           </a>
         </li>
 
-        <!-- Show these links only when logged in -->
         <ng-container *ngIf="isLoggedIn()">
           <li class="nav-item">
             <a routerLink="/layout/add-task" class="nav-link">
@@ -32,7 +30,6 @@
           </li>
         </ng-container>
 
-        <!-- Show these links only when NOT logged in -->
         <ng-container *ngIf="!isLoggedIn()">
           <li class="nav-item">
             <a routerLink="/login" class="nav-link">
@@ -49,8 +46,7 @@
         </ng-container>
       </ul>
     </nav>
-
-    <!-- User Info & Logout (only when logged in) -->
+    
     <div class="user-section" *ngIf="isLoggedIn()">
       <span class="username">
         <i class="bi bi-person-circle"></i>

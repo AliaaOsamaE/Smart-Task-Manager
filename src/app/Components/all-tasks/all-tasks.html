@@ -3,18 +3,9 @@
     <i class="bi bi-list-task"></i>
     All Tasks
   </h2>
-
-  <!-- Empty state -->
-  <div class="empty-state" *ngIf="tasks().length === 0">
-    <i class="bi bi-inbox"></i>
-    <h3>No tasks yet</h3>
-    <p>Start by adding your first task!</p>
-  </div>
-
-  <!-- Tasks grid -->
-  <div class="tasks-grid" *ngIf="tasks().length > 0">
+  <div class="tasks-grid" *ngIf="tasks.length > 0">
     <app-task-card
-      *ngFor="let task of tasks()"
+      *ngFor="let task of tasks"
       [task]="task"
       (delete)="onDeleteTask($event)"
       (toggle)="onToggleTask($event)"
